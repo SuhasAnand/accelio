@@ -130,7 +130,7 @@ static int fio_libraio_getevents(struct thread_data *td, unsigned int min,
 				 unsigned int max, const struct timespec *t)
 {
 	struct libraio_data *ld = td->io_ops->data;
-	unsigned actual_min = td->o.iodepth_batch_complete == 0 ? 0 : min;
+	unsigned actual_min = td->o.iodepth_batch_complete_min == 0 ? 0 : min;
 	int r, events = 0;
 
 	do {
